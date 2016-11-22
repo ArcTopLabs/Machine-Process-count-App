@@ -26,7 +26,7 @@
             var dataPop = [["Country", "Population"]];
             var dataAr = [["Country", "Population"]];
             var bubbleChart = [['Country', 'Rank', 'PercentageOfWorld', 'Country', 'Population']];
-            var comboChart = [['Machine', 'Total', 'Used', 'Available']];
+            var comboChart = [['Machine', 'Process']];
             google.charts.load('current', {'packages': ['corechart']});
             $(document).ready(function () {
                 $("button").click(function () {
@@ -35,11 +35,11 @@
 
                     //call customer
                     $.ajax({
-                        url: 'http://api.masterdatanode.com/unix/memory/find/',
+                        url: 'http://api.masterdatanode.com/unix/process/find/',
                         type: 'post',
                         data: dataString,
                         headers: {
-                            "access_token": 'Zs0nTQB-ujOSV0KmEoPhBx2E6-Ab_GKO',
+                           "access_token": '#######Access_Token########',
                             "Content-Type": 'application/json'
                         },
                         dataType: 'json',
@@ -53,8 +53,10 @@
                             for (var key in population) {
                                 if (population.hasOwnProperty(key)) {
                                     var val = population[key];
+                                    var date_time = val['created_date'];
+                                    var date = date_time.substr(0, date_time.indexOf(' ')); // "72"
 //                                    alert(JSON.stringify(val['Country']));
-                                    comboChart.push([val['machine'] + "|" + val['used_per'], parseInt(val['total']), parseInt(val['used']), parseInt(val['available'])])
+                                    comboChart.push([val['machine'] + "|" + date, parseInt(val['process'])]);
 //                                    alert(JSON.stringify(dataPop));
                                 }
                             }
@@ -91,8 +93,8 @@
                 var data = google.visualization.arrayToDataTable(comboChart);
 
                 var options = {
-                    title: 'Unix Machine information 1GB = 1000,000',
-                    vAxis: {title: 'Memory'},
+                    title: 'Unix Machine number of process running',
+                    vAxis: {title: 'Process'},
                     hAxis: {title: 'Machine'},
                     seriesType: 'bars',
                     // Allow multiple

@@ -38,12 +38,12 @@
                     mytable.draw();
 //                    alert("canvas clear");
                     $.ajax({
-                        url: 'http://api.masterdatanode.com/unix/memory/find/',
+                        url: 'http://api.masterdatanode.com/unix/process/find/',
                         type: 'post',
 //                        data: {},
                        data: dataString,
                         headers: {
-                            "access_token": 'Zs0nTQB-ujOSV0KmEoPhBx2E6-Ab_GKO',
+                            "access_token": '#######Access_Token########',
                             "Content-Type": 'application/json'
                         },
                         dataType: 'json',
@@ -70,10 +70,7 @@
 
                                 var result12 = [];
                                 result12.push(jsonObject.machine);
-                                result12.push(jsonObject.used_per);
-                                result12.push(jsonObject.total);
-                                result12.push(jsonObject.used);
-                                result12.push(jsonObject.available);
+                                result12.push(jsonObject.process);
                                 result12.push(jsonObject.created_date);
 
 
@@ -124,10 +121,7 @@
                     <thead>
                         <tr>
                             <th>Machine</th>
-                            <th>Used Percentage</th>
-                            <th>Total</th>
-                            <th>Used</th>
-                            <th>Available</th>
+                            <th>Process</th>
                             <th>DateOfCreation</th>
 
                         </tr>
