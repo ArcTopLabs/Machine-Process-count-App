@@ -3,7 +3,7 @@
 
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
-        <title>Machine Process count App</title>
+
         <!--Load the AJAX API-->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -32,11 +32,11 @@
 
                     //call customer
                     $.ajax({
-                        url: 'http://api.masterdatanode.com/unix/process/find/',
+                        url: 'http://api.masterdatanode.com/###APPNAME###/process/find/',
                         type: 'post',
                         data: dataString,
                         headers: {
-                           "access_token": '2QElaypzKUgiroyYIMu8oIXNy3ZPateI',
+                           "access_token": '#######Access_Token########',
                             "Content-Type": 'application/json'
                         },
                         dataType: 'json',
