@@ -15,4 +15,4 @@ ArcTop Labs : MasterDataNode Data Solution
             
 
 ![alt text](https://github.com/ArcTopLabs/ProcessDashboard/blob/master/screenshot/Machine%20Process%20count%20App.png)
-![alt text](https://github.com/ArcTopLabs/ArcTopLabs/ProcessDashboard/blob/master/screenshot/process%20data%20push.png)
+![alt text](https://github.com/ArcTopLabs/ProcessDashboard/blob/master/screenshot/process%20data%20push.png)
